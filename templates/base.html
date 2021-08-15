@@ -1,0 +1,52 @@
+
+{% block content %}
+<div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand text-center" href="#">
+        <img src="https://www.drupal.org/files/project-images/bootstrap-stack.png" height="30" width="20"  alt="">
+        {{title}}</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target='#se'>
+        <span class="navbar-toggler-icon"></span>
+    </button>  
+    <div class="collapse navbar-collapse " id="se">
+        <ul class="navbar-nav ml-auto">
+            {% if user %}
+            
+            <li class="nav-item d-lg-inline">
+                <p class="nav-link">{{name_id}}</p>
+            </li>
+            <li class="nav-item d-lg-inline">
+                <a href="/" class="nav-link">logout</a>
+            </li>
+            
+            
+            {% else %}
+            <li class="nav-item d-lg-inline">
+                <a href="/login" class="nav-link">login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register" class="nav-link">register</a>
+                
+            </li>
+            {% endif %}
+            
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarScrollingDropdown" type="button" data-toggle="dropdown" aria-expanded="false">
+                  Link
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <hr class="dropdown-divider">
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">blog</a>
+            </li> -->
+        </ul>
+         
+    </div>  
+</nav>
+</div>
+{% endblock %}

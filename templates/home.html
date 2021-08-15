@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>HOME</title>
+</head>
+<body>
+    <!-- <h1>home</h1> -->
+    {% include 'sethu/base.html' %}
+    {% block content %}
+
+    {% endblock  %}
+    
+        <!-- {% if data1 %}
+            <h1>dsfs</h1>
+        {% else %}
+               
+        {% endif %}     -->
+    
+
+    
+
+    <div class="container ">
+        <div class="row">
+        {% for i in data %}
+        
+            <div class="card-group">
+                
+            <div class="card col-12 m-5" style="width:16rem;height: auto;">
+                <div class="card-deck">
+                    <img src="{{i.image.url}}" class="card-img-top " height="120"  alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text">{{i.address}}</p>
+                    <p class="card-text">{{i.cla}}</p>
+                    {% if user %}
+                    <a href="/reorder/{{i.id}}" class="btn btn-primary">Go somewhere</a>
+                    {% else %}
+                    <a href="/reorder/{{i.id}}" class="btn btn-secondary disabled" >Go somewhere</a>
+                    {% endif %}
+                    
+                </div>
+                </div>
+            </div>
+            </div>
+        
+    
+          {% endfor %}
+        </div>
+            </div>
+    </div>
+    {{user}}
+</body>
+</html>
